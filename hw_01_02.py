@@ -13,12 +13,13 @@ def get_suitable_cubes(sample):
 
 
 # список кубов
-cubes = list(i ** 3 for i in range(0, 1001, 2))
+cubes = list(i ** 3 for i in range(1, 1001, 2))
 print(cubes)
 
 # список кубов, сумма чисел которых делиться на цело на 7
 suitable_cubes = get_suitable_cubes(cubes)
 print(suitable_cubes)
+print(sum(suitable_cubes))
 
 # список кубов + 17
 cubes = list(i + 17 for i in cubes)
@@ -27,3 +28,4 @@ print(cubes)
 # список кубов, сумма чисел которых делиться на цело на 7
 suitable_cubes = get_suitable_cubes(cubes)
 print(suitable_cubes)
+print(sum(suitable_cubes))
