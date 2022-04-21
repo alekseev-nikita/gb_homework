@@ -7,9 +7,9 @@ def get_data():
             yield idx+1, line
 
 
-def edit(_, *args):
-    line_num = int(args[0])
-    price = args[1].replace('.', ',') + '\n'
+def edit(line_num, price):
+    line_num = int(line_num)
+    price = price.replace('.', ',') + '\n'
     data = dict(get_data())
     if data.get(line_num) is None:
         print('Line number out of limit')
