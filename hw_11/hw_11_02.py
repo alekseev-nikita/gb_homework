@@ -9,6 +9,7 @@ def calc(x, y):
         z = x / y
     except ZeroDivSoft:
         print('Next time')
+    return z
 
 
 calc(2, 2)

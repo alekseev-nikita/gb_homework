@@ -1,15 +1,22 @@
+from office_equipment import Printer, Xerox, Scaner
+
+
 class Warehouse:
     def __init__(self):
-        self.storage = []
+        self.storage = {
+            Printer: [],
+            Scaner: [],
+            Xerox: []
+        }
 
-    def __str__(self):
-        return ''.join([f'{type(el)}: size - {el.size}; price - {el.price}\n' for el in self.storage])
+    def add_equipment(self, equipment, count: int):
+        for i in range(count):
+            self.storage.get(type(equipment)).append(equipment)
 
-    def add_equipment(self, equipment):
-        self.storage.append(equipment)
-
-    def remove_equipement(self, equipment):
+    def remove_equipment(self, equipment):
         try:
-            self.storage.remove(equipment)
+            self.storage.get(type(equipment)).remove(equipment)
         except ValueError:
             print('Out of stock')
+
+
